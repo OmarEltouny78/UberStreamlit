@@ -5,11 +5,11 @@ import pandas as pd
 st.title('Uber pickups in NYC')
 
 DATE_COLUMN='date/time'
-DATA_PATH='Datasets/uber-raw-data-sep14.csv'
+DATA_PATH='https://raw.githubusercontent.com/OmarEltouny78/UberStreamlit/main/UberEDAApp/Datasets/uber-raw-data-sep14.csv'
 
 
 @st.cache_data
-def load_data(nrows,DATAPATH='Datasets/uber-raw-data-sep14.csv'):
+def load_data(nrows,DATAPATH='https://raw.githubusercontent.com/OmarEltouny78/UberStreamlit/main/UberEDAApp/Datasets/uber-raw-data-sep14.csv'):
     data=pd.read_csv(DATA_PATH,nrows=nrows)
     lowercase=lambda x: str(x).lower()
     data.rename(lowercase,axis='columns',inplace=True)
